@@ -35,7 +35,7 @@ A simple, microcontroller-based PWM buck converter power supply, designed to pro
 
 ## Assembly
 1. Order the PCBs:
-For easier and cleaner assembly, it is recommended to order the PCBs from manufacturers like JLCPCB, PCBWAY, or AllPCB. Both the Buck Converter PCB and the optional Frontend PCB can be used. Just upload the appropriate Gerber files ([buckdown-pcb](.hardware/electrical/buck-converter/Gerber), [frontend-pcb](.hardware/electrical/frontend/Gerber))
+For easier and cleaner assembly, it is recommended to order the PCBs from manufacturers like JLCPCB, PCBWAY, or AllPCB. Both the Buck Converter PCB and the optional Frontend PCB can be used. Just upload the appropriate Gerber files ([buckdown-pcb](hardware/electrical/buck-converter/Gerber), [frontend-pcb](hardware/electrical/frontend/Gerber))
 2. Solder the components
 Carefully solder all the required components. The project includes both SMD and THT parts, so make sure you have the right tools and technique.
 3. Flash the microcontroller 
@@ -77,7 +77,7 @@ To adjust the output voltage:
 - Turn it **right** to increase the selected digit.
 - Press the rotary encoder to switch between digits.
 
-You can fine-tune the PI controller parameters (`K_P` and `K_I`) experimentally in the firmware to improve voltage regulation stability and response. See [RegulatorManager.hpp](./software/RegulatorManager.hpp) for details.
+You can fine-tune the PI controller parameters (`K_P` and `K_I`) experimentally in the firmware to improve voltage regulation stability and response. See [RegulatorManager.hpp](/software/RegulatorManager.hpp) for details.
 
 
 ## Contributing
