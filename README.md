@@ -71,7 +71,7 @@ You can use banana plugs, terminal blocks, or any other suitable connectors for 
     -   Use a separate **buck converter module** (e.g., LM2596S) connected in parallel with the DC input.
 
 ## Usage
-<img src="/pictures/display.gif)" alt="display" width="150"/>
+<img src="/pictures/display.gif" alt="display" width="150"/>
 
 To adjust the output voltage:
 
