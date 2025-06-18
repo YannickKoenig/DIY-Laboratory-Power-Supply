@@ -1,5 +1,5 @@
-
-# LPSU - Laboratory Power Supply Unit
+![image info](/pictures/Cover.png)
+DIY Laboratory Power Supply Unit
 A simple, microcontroller-based PWM buck converter power supply, designed to provide precise voltage control and current measurement. The output voltage is easily adjustable using a rotary encoder for accurate and intuitive input. This project is compact, affordable, and perfect for DIY laboratory power supply applications.
 
 ## Table of Contents  
