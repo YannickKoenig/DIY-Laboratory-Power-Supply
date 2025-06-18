@@ -8,6 +8,7 @@ A simple, microcontroller-based PWM buck converter power supply, designed to pro
 - [Usage](#usage)  
 - [Contributing](#contributing)  
 - [License](#license)
+- [Schematics](#schematics)
 
 ## Bill of Materials (BOM)
 
@@ -26,9 +27,13 @@ A simple, microcontroller-based PWM buck converter power supply, designed to pro
 | Raspberry Pi Pico      | Microcontroller                     | 1        | 2,00 €  | 2,00 €  |
 | Electrolytic Capacitor  | 470µF                               | 1        | 0,30 €  | 0,30 €  |
 | Ceramic Capacitor      | 1µF                                 | 1        | 0,10 €  | 0,10 €  |
+| Inductor               | CD75, 47UH                          | 1        | 0,10 €  | 0,10 €  |
+| SMD Resistor           | Values 51k and 10k (1206)           | 2        | 0,01 €  | 0,02 €  |
+| SMD Resistor           | Value 0.1 Ohm      (2512)           | 1        | 0,01 €  | 0,01 €  |
 
-**Total: 8,88 €**
+CD75, 47UH 
 
+**Total: 9,01 €**
 
 
 
@@ -103,3 +108,9 @@ This project uses the following third-party software:
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE.md).
+
+## Schematics
+
+![image info](/pictures/SchematicBuckRegulator.png)
+
+![image info](/pictures/SchematicFrontend.png)
