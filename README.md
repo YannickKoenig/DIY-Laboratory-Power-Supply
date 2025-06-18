@@ -40,7 +40,7 @@ For easier and cleaner assembly, it is recommended to order the PCBs from manufa
 Carefully solder all the required components. The project includes both SMD and THT parts, so make sure you have the right tools and technique.
 3. Flash the microcontroller:
 -   Connect the Raspberry Pi Pico to your computer while holding the **BOOTSEL** button during startup.
--   You can either compile the firmware yourself or simply upload the precompiled `.uf2` file provided in the [releases section](#).
+-   You can either compile the firmware yourself or simply upload the precompiled `.uf2` file provided in the [releases section](/releases/tag/v1.0).
 
 4. Connect the wiring:
 -   Connect the **Buck Converter PCB** and the **Frontend PCB** (if used) using the following connections:
