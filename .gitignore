@@ -1,0 +1,29 @@
+build
+!.vscode/*
+CMakeFiles
+Makefile
+CMakeCache.txt
+*.o
+*.exe
+*.out
+
+# FreeCAD temp and backup files
+*.FCStd1
+*.bak
+*.pyc
+
+# KiCAD backup and temporary files
+*.bak
+*.dcm
+*.sch-bak
+*.kicad_pcb-bak
+*.tmp
+*.xml
+
+# STL and other generated files (optional)
+*.stl
+*.step
+
+# IDEs
+.vscode/
+.idea/
