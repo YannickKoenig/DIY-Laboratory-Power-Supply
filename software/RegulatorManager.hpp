@@ -2,7 +2,7 @@
 
 #define PWM_pin 16
 #define U_in_pin 26 // ADC0
-#define I_in_pin 27
+#define I_in_pin 27 // ADC1
 
 #define amperage_ADC 1
 #define voltage_ADC 0

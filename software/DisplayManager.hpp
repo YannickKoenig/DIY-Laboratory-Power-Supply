@@ -3,13 +3,13 @@
 #include "pico/stdlib.h"
 #include "displaylib_LED_PICO/include/displaylib_LED_PICO/tm1637.hpp"
 
-#define CLK_Display1 9
-#define DIO_Display1 6
+#define CLK_Display1 1
+#define DIO_Display1 0
 
-#define CLK_Display2 3
-#define DIO_Display2 4
+#define CLK_Display2 7
+#define DIO_Display2 6
 
-#define EMPTY_SEGMENT (0xff)
+#define EMPTY_SEGMENT (0x00)
 
 class DisplayManager
 {

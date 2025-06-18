@@ -3,9 +3,9 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
 
-#define ENCODER_A_PIN 1
-#define ENCODER_B_PIN 0
-#define ENCODER_SW_PIN 7
+#define ENCODER_A_PIN 13
+#define ENCODER_B_PIN 14
+#define ENCODER_SW_PIN 15
 
 #define DEBOUNCE_MS 100
 

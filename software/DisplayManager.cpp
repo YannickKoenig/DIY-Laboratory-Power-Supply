@@ -10,6 +10,15 @@ DisplayManager::DisplayManager() : voltageDisplay(CLK_Display1, DIO_Display1, 80
 
     amperageDisplay.displayBegin();
     amperageDisplay.setBrightness(5, true);
+
+    gpio_set_function(CLK_Display1, GPIO_FUNC_SIO);
+    gpio_set_function(DIO_Display1, GPIO_FUNC_SIO);
+    gpio_set_dir(CLK_Display1, GPIO_OUT);
+    gpio_set_dir(DIO_Display1, GPIO_OUT);
+    gpio_set_function(CLK_Display2, GPIO_FUNC_SIO);
+    gpio_set_function(DIO_Display2, GPIO_FUNC_SIO);
+    gpio_set_dir(CLK_Display2, GPIO_OUT);
+    gpio_set_dir(DIO_Display2, GPIO_OUT);
 }
 
 void DisplayManager::update(const int *newValues, int selectedPosition)

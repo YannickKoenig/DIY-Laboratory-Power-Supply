@@ -23,7 +23,7 @@ int main()
 
 void setup(void)
 {
-    stdio_init_all(); // Initialize USB Serial
+    // stdio_init_all(); // Initialize USB Serial
 
     int values[] = {0, 5, 0, 0}; // Default Voltage: 5.00 V
 
@@ -47,19 +47,20 @@ void loop()
 {
     while (true)
     {
+
         const int *values = rotaryEncoder->getValues();
         if (displayRefreshDue())
         {
             displayManager->update(values, rotaryEncoder->getSelectedDecimal());
             displayManager->setLastEdited(rotaryEncoder->getLastInterupt());
-            lastDisplayRefresh = get_absolute_time();
             displayManager->show();
             displayManager->setAmperage(regulatorManager->getAmperage());
+            lastDisplayRefresh = get_absolute_time();
         }
 
         regulatorManager->setTargetVoltage(calculateTargetVoltage(values));
         regulatorManager->update(5);
 
-        sleep_us(5 * 1000);
+        sleep_us(15 * 1000);
     }
 }
