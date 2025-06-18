@@ -34,15 +34,15 @@ A simple, microcontroller-based PWM buck converter power supply, designed to pro
 
 
 ## Assembly
-1. Order the PCBs:
+1. **Order the PCBs**:
 For easier and cleaner assembly, it is recommended to order the PCBs from manufacturers like JLCPCB, PCBWAY, or AllPCB. Both the Buck Converter PCB and the optional Frontend PCB can be used. Just upload the appropriate Gerber files ([buckdown-pcb](.hardware/electrical/buck-converter/Gerber), [frontend-pcb](.hardware/electrical/frontend/Gerber))
-2. Solder the components:
+2. **Solder the components**:
 Carefully solder all the required components. The project includes both SMD and THT parts, so make sure you have the right tools and technique.
-3. Flash the microcontroller:
+3. **Flash the microcontroller**:
 -   Connect the Raspberry Pi Pico to your computer while holding the **BOOTSEL** button during startup.
--   You can either compile the firmware yourself or simply upload the precompiled `.uf2` file provided in the [releases section](/releases/tag/v1.0).
+-   You can either compile the firmware yourself or simply upload the precompiled `.uf2` file provided in the **releases** section.
 
-4. Connect the wiring:
+4. **Connect the wiring**:
 -   Connect the **Buck Converter PCB** and the **Frontend PCB** (if used) using the following connections:
     
     -   `GND` → `GND`
