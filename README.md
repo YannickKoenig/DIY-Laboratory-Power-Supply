@@ -31,7 +31,6 @@ A simple, microcontroller-based PWM buck converter power supply, designed to pro
 | SMD Resistor           | Values 51k and 10k (1206)           | 2        | 0,01 €  | 0,02 €  |
 | SMD Resistor           | Value 0.1 Ohm      (2512)           | 1        | 0,01 €  | 0,01 €  |
 
-CD75, 47UH 
 
 **Total: 9,01 €**
 
