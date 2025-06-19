@@ -2,6 +2,14 @@
 # DIY Laboratory Power Supply Unit
 A simple, microcontroller-based PWM buck converter power supply, designed to provide precise voltage control and current measurement. The output voltage is easily adjustable using a rotary encoder for accurate and intuitive input. This project is compact, affordable, and perfect for DIY laboratory power supply applications.
 
+## Features
+- Voltage regulation via PWM buck converter
+- User-friendly voltage adjustment using a rotary encoder
+- Real-time display of voltage and current
+- Custom PCB Boards
+- Compact and cost-effective design (~9€)
+
+
 ## Table of Contents  
 - [BOM](#bom)
 - [Assembly](#assembly)  
