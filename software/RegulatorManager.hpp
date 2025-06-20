@@ -8,14 +8,14 @@
 #define voltage_ADC 0
 
 #define V_REF 3.3
-#define ADC_MAX 4095.0
+#define ADC_MAX 4096.0
 
 #define R1 51000.0
 #define R2 10000.0
 #define R_SHUNT 0.1
 
-#define K_p 0.1
-#define K_i 0.01
+#define K_p 0.4
+#define K_i 0.2
 
 #define PWM_FREQUENCY 50000 // 50 kHz
 

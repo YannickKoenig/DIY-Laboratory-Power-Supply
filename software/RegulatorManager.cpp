@@ -2,9 +2,10 @@
 #include "hardware/pwm.h"
 #include "hardware/adc.h"
 #include "RegulatorManager.hpp"
-
+#include <stdio.h>
 RegulatorManager::RegulatorManager()
 {
+
     // Get Slice number
     slice_num = pwm_gpio_to_slice_num(PWM_pin);
 
@@ -47,24 +48,33 @@ void RegulatorManager::setTargetVoltage(float newTarget)
     targetVoltage = newTarget;
 }
 
-void RegulatorManager::update(float loopTime_ms)
+void RegulatorManager::update(float loopTime_us)
 {
+
     currentVoltage = readVoltage();
     currentAmperage = getAmperage();
     float error = targetVoltage - currentVoltage;
-    integral += error * loopTime_ms * 0.001;
+    integral += error * loopTime_us * 0.001 * 0.001;
     duty_cycle = K_p * error + K_i * integral;
     if (duty_cycle > 1.0)
         duty_cycle = 1.0;
     if (duty_cycle < 0.0 || targetVoltage == 0)
         duty_cycle = 0.0;
 
+    // duty_cycle = 1 - duty_cycle; // Inverting MOSFET driver
+
     pwm_set_duty_cycle(duty_cycle);
+    /* printf("Current: %.3f\n", currentAmperage);
+     printf("Voltage: %.3f\n", currentVoltage);
+     printf("Error: %.3f\n", error);
+     printf("Integral: %.3f\n", integral);
+     printf("duty_cycle: %.3f\n%", duty_cycle);*/
+    printf("%.3f\n", currentVoltage);
 }
 
 float RegulatorManager::getAmperage()
 {
     adc_select_input(amperage_ADC);
-    double amperage = ((double)adc_read() / ADC_MAX) / R_SHUNT;
+    double amperage = (((double)adc_read() / ADC_MAX) * V_REF) / R_SHUNT;
     return amperage;
 }

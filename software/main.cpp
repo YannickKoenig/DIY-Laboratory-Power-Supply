@@ -23,6 +23,8 @@ int main()
 
 void setup(void)
 {
+    stdio_init_all(); // Initialize USB Serial
+
     int values[] = {0, 5, 0, 0}; // Default Voltage: 5.00 V
     displayManager = new DisplayManager();
     rotaryEncoder = new RotaryEncoder(values, 1);
@@ -55,8 +57,8 @@ void loop()
         }
 
         regulatorManager->setTargetVoltage(calculateTargetVoltage(values));
-        regulatorManager->update(10);
+        regulatorManager->update(500);
 
-        sleep_ms(10);
+        sleep_us(500);
     }
 }
