@@ -14,10 +14,10 @@
 #define R2 10000.0
 #define R_SHUNT 0.1
 
-#define K_p 0.4
-#define K_i 0.2
+#define K_p 0.3
+#define K_i 0.15
 
-#define PWM_FREQUENCY 50000 // 50 kHz
+#define PWM_FREQUENCY 62 // 62 kHz
 
 class RegulatorManager
 {

@@ -54,11 +54,11 @@ void loop()
             displayManager->show();
             displayManager->setAmperage(regulatorManager->getAmperage());
             lastDisplayRefresh = get_absolute_time();
+            regulatorManager->setTargetVoltage(calculateTargetVoltage(values));
         }
 
-        regulatorManager->setTargetVoltage(calculateTargetVoltage(values));
-        regulatorManager->update(500);
+        regulatorManager->update(100);
 
-        sleep_us(500);
+        sleep_us(100);
     }
 }
