@@ -54,7 +54,7 @@ public:
         gpio_set_dir(ENCODER_SW_PIN, GPIO_IN);
         gpio_pull_up(ENCODER_SW_PIN);
 
-        printf("Setting interrupt");
+        // printf("Setting interrupt");
 
         irq_set_enabled(IO_IRQ_BANK0, true);
         gpio_set_irq_callback(RotaryEncoder::interruptTriggered);
@@ -123,7 +123,7 @@ public:
         }
 
         // Calculate total numeric value from digits
-        double total = values[0] * 10.0 + values[1] + values[2] * 0.1 + values[3] * 0.01;
+        float total = values[0] * 10.0 + values[1] + values[2] * 0.1 + values[3] * 0.01;
 
         // Clamp total max to 18.00
         if (total > 18.00)
@@ -138,7 +138,7 @@ public:
     // Static ISR trampoline to call instance method
     static void interruptTriggered(uint gpio, uint32_t events)
     {
-        printf("interrupt triggered, gpio:%d\n\n\n", gpio);
+        // printf("interrupt triggered, gpio:%d\n\n\n", gpio);
 
         if (g_encoder)
             g_encoder->handleInterrupt(gpio, events);

@@ -17,11 +17,11 @@ RegulatorManager::RegulatorManager()
     pwm_init(PWM_FREQUENCY);
 }
 
-double RegulatorManager::readVoltage()
+float RegulatorManager::readVoltage()
 {
     adc_select_input(voltage_ADC);
-    double voltage = ((double)adc_read() / ADC_MAX) * V_REF; // You could use an external regulated reference voltage for increased precision
-    double real_voltage = voltage * ((R1 + R2) / R2);
+    float voltage = ((float)adc_read() / ADC_MAX) * V_REF; // You could use an external regulated reference voltage for increased precision
+    float real_voltage = voltage * ((R1 + R2) / R2);
     return real_voltage;
 }
 
@@ -42,16 +42,16 @@ void RegulatorManager::pwm_set_duty_cycle(float duty_cycle)
     pwm_set_gpio_level(PWM_pin, level);
 }
 
-void RegulatorManager::setTargetVoltage(double newTarget)
+void RegulatorManager::setTargetVoltage(float newTarget)
 {
     targetVoltage = newTarget;
 }
 
-void RegulatorManager::update(double loopTime_ms)
+void RegulatorManager::update(float loopTime_ms)
 {
     currentVoltage = readVoltage();
     currentAmperage = getAmperage();
-    double error = targetVoltage - currentVoltage;
+    float error = targetVoltage - currentVoltage;
     integral += error * loopTime_ms * 0.001;
     duty_cycle = K_p * error + K_i * integral;
     if (duty_cycle > 1.0)
@@ -62,9 +62,9 @@ void RegulatorManager::update(double loopTime_ms)
     pwm_set_duty_cycle(duty_cycle);
 }
 
-double RegulatorManager::getAmperage()
+float RegulatorManager::getAmperage()
 {
     adc_select_input(amperage_ADC);
-    double amperage = ((double)adc_read() / ADC_MAX) * R_SHUNT;
+    float amperage = ((float)adc_read() / ADC_MAX) * R_SHUNT;
     return amperage;
 }

@@ -30,7 +30,7 @@ private:
 public:
     DisplayManager();
     void update(const int *newValues, int selectedPosition);
-    void setAmperage(double amp);
+    void setAmperage(float amp);
     void show();
     void setLastEdited(absolute_time_t timestamp);
     bool isBlinkingPeriod();

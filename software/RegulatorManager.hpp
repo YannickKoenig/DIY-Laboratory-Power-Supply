@@ -22,27 +22,27 @@
 class RegulatorManager
 {
 private:
-    double targetVoltage = 0;
-    double currentVoltage = 0;
+    float targetVoltage = 0;
+    float currentVoltage = 0;
 
-    double currentAmperage = 0;
-    double maxAmperage = 2;
+    float currentAmperage = 0;
+    float maxAmperage = 2;
 
-    double integral = 0.0;
-    double duty_cycle = 0.0;
+    float integral = 0.0;
+    float duty_cycle = 0.0;
     uint8_t slice_num;
 
 public:
     RegulatorManager();
 
-    double readVoltage();
+    float readVoltage();
 
     void pwm_init(uint32_t freq_hz);
 
     void pwm_set_duty_cycle(float duty_cycle);
 
-    void setTargetVoltage(double newTarget);
+    void setTargetVoltage(float newTarget);
 
-    void update(double loopTime_ms);
-    double getAmperage();
+    void update(float loopTime_ms);
+    float getAmperage();
 };

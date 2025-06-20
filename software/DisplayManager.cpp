@@ -63,11 +63,11 @@ void DisplayManager::setLastEdited(absolute_time_t timestamp)
     last_updated = timestamp;
 }
 
-void DisplayManager::setAmperage(double amp)
+void DisplayManager::setAmperage(float amp)
 {
     char buffer[8];
     uint8_t data[4] = {EMPTY_SEGMENT, EMPTY_SEGMENT, EMPTY_SEGMENT, EMPTY_SEGMENT};
-    // Convert double to string
+    // Convert float to string
     snprintf(buffer, sizeof(buffer), "%.3f", amp); // %.3f formats to 3 decimal places
 
     int index = 1;
