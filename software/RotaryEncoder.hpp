@@ -7,7 +7,7 @@
 #define ENCODER_B_PIN 14
 #define ENCODER_SW_PIN 15
 
-#define DEBOUNCE_MS 100
+#define DEBOUNCE_MS 255
 
 class RotaryEncoder;
 

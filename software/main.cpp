@@ -57,8 +57,8 @@ void loop()
         }
 
         regulatorManager->setTargetVoltage(calculateTargetVoltage(values));
-        regulatorManager->update(500);
+        regulatorManager->update(100);
 
-        sleep_us(500);
+        sleep_us(100);
     }
 }

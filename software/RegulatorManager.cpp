@@ -69,7 +69,7 @@ void RegulatorManager::update(float loopTime_us)
      printf("Error: %.3f\n", error);
      printf("Integral: %.3f\n", integral);
      printf("duty_cycle: %.3f\n%", duty_cycle);*/
-    printf("%.3f\n", currentVoltage);
+    printf("%.3f", currentVoltage);
 }
 
 float RegulatorManager::getAmperage()
