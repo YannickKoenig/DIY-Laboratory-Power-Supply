@@ -1,6 +1,14 @@
-
-# LPSU - Laboratory Power Supply Unit
+![image info](/pictures/Cover.png)
+# DIY Laboratory Power Supply Unit
 A simple, microcontroller-based PWM buck converter power supply, designed to provide precise voltage control and current measurement. The output voltage is easily adjustable using a rotary encoder for accurate and intuitive input. This project is compact, affordable, and perfect for DIY laboratory power supply applications.
+
+## Features
+- Voltage regulation via PWM buck converter
+- User-friendly voltage adjustment using a rotary encoder
+- Real-time display of voltage and current
+- Custom PCB Boards
+- Compact and cost-effective design (~9€)
+
 
 ## Table of Contents  
 - [BOM](#bom)
@@ -8,6 +16,7 @@ A simple, microcontroller-based PWM buck converter power supply, designed to pro
 - [Usage](#usage)  
 - [Contributing](#contributing)  
 - [License](#license)
+- [Schematics](#schematics)
 
 ## Bill of Materials (BOM)
 
@@ -26,23 +35,26 @@ A simple, microcontroller-based PWM buck converter power supply, designed to pro
 | Raspberry Pi Pico      | Microcontroller                     | 1        | 2,00 €  | 2,00 €  |
 | Electrolytic Capacitor  | 470µF                               | 1        | 0,30 €  | 0,30 €  |
 | Ceramic Capacitor      | 1µF                                 | 1        | 0,10 €  | 0,10 €  |
+| Inductor               | CD75, 47UH                          | 1        | 0,10 €  | 0,10 €  |
+| SMD Resistor           | Values 51k and 10k (1206)           | 2        | 0,01 €  | 0,02 €  |
+| SMD Resistor           | Value 0.1 Ohm      (2512)           | 1        | 0,01 €  | 0,01 €  |
 
-**Total: 8,88 €**
 
+**Total: 9,01 €**
 
 
 
 
 ## Assembly
-1. Order the PCBs:
-For easier and cleaner assembly, it is recommended to order the PCBs from manufacturers like JLCPCB, PCBWAY, or AllPCB. Both the Buck Converter PCB and the optional Frontend PCB can be used. Just upload the appropriate Gerber files ([buckdown-pcb](.hardware/electrical/buck-converter/Gerber), [frontend-pcb](.hardware/electrical/frontend/Gerber))
-2. Solder the components
+1. **Order the PCBs**:
+For easier and cleaner assembly, it is recommended to order the PCBs from manufacturers like JLCPCB, PCBWAY, or AllPCB. Both the Buck Converter PCB and the optional Frontend PCB can be used. Just upload the appropriate Gerber files ([buckdown-pcb](hardware/electrical/buck-converter/Gerber), [frontend-pcb](hardware/electrical/frontend/Gerber))
+2. **Solder the components**:
 Carefully solder all the required components. The project includes both SMD and THT parts, so make sure you have the right tools and technique.
-3. Flash the microcontroller 
+3. **Flash the microcontroller**:
 -   Connect the Raspberry Pi Pico to your computer while holding the **BOOTSEL** button during startup.
--   You can either compile the firmware yourself or simply upload the precompiled `.uf2` file provided in the [releases section](#).
+-   You can either compile the firmware yourself or simply upload the precompiled `.uf2` file provided in the **releases** section.
 
-4. Connect the wiring
+4. **Connect the wiring**:
 -   Connect the **Buck Converter PCB** and the **Frontend PCB** (if used) using the following connections:
     
     -   `GND` → `GND`
@@ -71,6 +83,8 @@ You can use banana plugs, terminal blocks, or any other suitable connectors for 
     -   Use a separate **buck converter module** (e.g., LM2596S) connected in parallel with the DC input.
 
 ## Usage
+<img src="/pictures/display.gif" alt="display" width="150"/>
+
 To adjust the output voltage:
 
 - Turn the rotary encoder **left** to decrease the selected digit.
@@ -101,3 +115,9 @@ This project uses the following third-party software:
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE.md).
+
+## Schematics
+
+![image info](/pictures/SchematicBuckRegulator.png)
+
+![image info](/pictures/SchematicFrontend.png)

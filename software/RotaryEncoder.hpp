@@ -147,8 +147,6 @@ public:
     void handleInterrupt(uint gpio, uint32_t events)
     {
 
-        // TODO: SW Interupt handeln
-
         bool A = gpio_get(ENCODER_A_PIN);
         bool B = gpio_get(ENCODER_B_PIN);
 

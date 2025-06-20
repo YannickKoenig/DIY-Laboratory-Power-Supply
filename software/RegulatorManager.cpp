@@ -65,6 +65,6 @@ void RegulatorManager::update(float loopTime_ms)
 float RegulatorManager::getAmperage()
 {
     adc_select_input(amperage_ADC);
-    float amperage = ((float)adc_read() / ADC_MAX) * R_SHUNT;
+    double amperage = ((double)adc_read() / ADC_MAX) / R_SHUNT;
     return amperage;
 }
