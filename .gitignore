@@ -27,4 +27,4 @@ CMakeCache.txt
 # IDEs
 .vscode/
 .idea/
-.gitignore
+*.gitignore
