@@ -17,7 +17,7 @@
 #define K_p 0.3
 #define K_i 0.15
 
-#define PWM_FREQUENCY 62 // 62 kHz
+#define PWM_FREQUENCY 62000 // 62 kHz
 
 class RegulatorManager
 {
